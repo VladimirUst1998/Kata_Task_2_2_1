@@ -71,11 +71,18 @@ public class User {
 
    @Override
    public String toString() {
-      return "Id = " + id + '\n' +
-              "First Name = " + firstName + '\n' +
-              "Last Name = " + lastName + '\n' +
-              "Email = " + email + '\n' +
-              "Model = " + car.getModel() + '\n' +
-              "Series = " + car.getSeries() + '\n';
+         try {
+            return "Id = " + id + '\n' +
+                    "First Name = " + firstName + '\n' +
+                    "Last Name = " + lastName + '\n' +
+                    "Email = " + email + '\n' +
+                    "Model = " + car.getModel() + '\n' +
+                    "Series = " + car.getSeries() + '\n';
+         } catch (NullPointerException e) {
+            return "Id = " + id + '\n' +
+                    "First Name = " + firstName + '\n' +
+                    "Last Name = " + lastName + '\n' +
+                    "Email = " + email + '\n';
+         }
    }
 }
